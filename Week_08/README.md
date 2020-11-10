@@ -1,5 +1,5 @@
 # 快速排序代码示例
-`
+```
 int random_partition(vector<int>& nums, int l, intr) {
   int random_pivot_index = rand() % (r - l +1) + l;  //随机选择pivot
   int pivot = nums[random_pivot_index];
@@ -22,9 +22,9 @@ void random_quicksort(vector<int>& nums, int l, int r) {
     random_quicksort(nums, pivot_index+1, r);
   }
 }
-`
+```
 # 归并排序代码示例
-`
+```
 void mergeSort(vector<int> &nums, int left, int right) {
 	if (left >= right) return;
 	
@@ -48,4 +48,4 @@ void merge(vector<int> &nums, int left, int mid, int right) {
 	
 	for (i = left, k = 0; i <= right;) nums[i++] = tmp[k++];
 }
-`
+```
