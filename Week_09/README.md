@@ -19,3 +19,24 @@ int forceSearch(string text, string pattern) {
 ```
 # 字符串匹配的KMP算法
 http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html
+
+# Atoi 代码示例
+```
+int myAtoi(string str) {
+   int res = 0;
+   int sign = 1;
+   size_t index = 0;
+   if(str.find_first_not_of(' ') != string::npos) 
+       index = str.find_first_not_of(' ');
+   if(str[index] == '+' || str[index] == '-')
+       sign = str[index] == '-' ? -1 : 1;
+    
+    while(index < str.size() && isdigit(str[index])) {
+        res = res * 10 + (str[index++] - '0');
+        if(res*sign > INT_MAX) return INT_MAX;
+        if(res*sign < INT_MIN) return INT_MIN; 
+    }
+
+   return res*sign;
+}
+```
